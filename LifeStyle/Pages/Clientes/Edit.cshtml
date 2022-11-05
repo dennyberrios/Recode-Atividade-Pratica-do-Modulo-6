@@ -1,0 +1,70 @@
+﻿@page
+@model LifeStyle.Pages.Clientes.EditModel
+@{
+}
+
+
+<br />
+<h2>Atualizar Cliente</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>
+    </div>
+}
+
+<form method="POST">
+    <input type="hidden" name="Id" value="@Model.clienteInfo.Id" />
+    <div class="row mb-3">
+        <label class="col-ms-3 col-form-label">Nome</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Nome" maxlength="80" valeu="@Model.clienteInfo.Nome">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-ms-3 col-form-label">Cpf</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Cpf" maxlength="15" valeu="@Model.clienteInfo.Cpf">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-ms-3 col-form-label">Rg</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Rg" maxlength="10" valeu="@Model.clienteInfo.Rg">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-ms-3 col-form-label">E-mail</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Email" maxlength="100" valeu="@Model.clienteInfo.Email">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-ms-3 col-form-label">Telefone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Telefone" maxlength="20" valeu="@Model.clienteInfo.Telefone">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="bnt btn-success">Cadastrar</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-danger" href="/" role="button">Cancelar</a>
+        </div>
+    </div>
+</form>

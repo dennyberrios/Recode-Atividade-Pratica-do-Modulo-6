@@ -1,0 +1,18 @@
+CREATE TABLE cliente (
+    id INT NOT NULL PRIMARY KEY IDENTITY,
+    nome VARCHAR (80) NOT NULL,
+    email VARCHAR (100) NOT NULL UNIQUE,
+	cpf VARCHAR(15) NOT NULL UNIQUE,
+	rg VARCHAR(10) NOT NULL UNIQUE,
+    telefone VARCHAR(20) NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO cliente (nome, email, telefone, cpf, rg)
+VALUES
+('Bill Gates', 'bill.gates@microsoft.com', '+123456789','123.455.751-90','4561276'),
+('Elon Musk', 'elon.musk@spacex.com', '+111222333','123.455.711-90','4565276'),
+('Will Smith', 'will.smith@gmail.com', '+111333555','153.455.751-90','1561276'),
+('Bob Marley', 'bob@gmail.com', '+111555999','173.455.751-90','3561276'),
+('Cristiano Ronaldo', 'cristiano.ronaldo@gmail.com', '+32447788993','123.485.751-90','4561676'),
+('Boris Johnson', 'boris.johnson@gmail.com', '+4499778855','123.455.751-80','4561279');
